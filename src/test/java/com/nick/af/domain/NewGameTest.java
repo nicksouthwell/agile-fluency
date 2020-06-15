@@ -5,11 +5,16 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class NewGameTest {
+    private Game game = new Game();
+
     @Test
     public void aNewGameHasAScoreOfZero() {
-        Game game = new Game();
-
         assertThat(game.score())
                 .isZero();
+    }
+
+    @Test
+    public void aNewGameHasAvailableFeatures() {
+        assertThat(game.availableFeatures()).isNotEmpty();
     }
 }
