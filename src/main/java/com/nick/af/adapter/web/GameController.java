@@ -1,9 +1,15 @@
 package com.nick.af.adapter.web;
 
+import com.nick.af.domain.Feature;
 import com.nick.af.domain.Game;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.Comparator.comparing;
 
 @Controller
 public class GameController {
@@ -17,6 +23,11 @@ public class GameController {
     @GetMapping("/")
     public String viewScore(Model model) {
         model.addAttribute("score", game.score());
+        List<FeatureView> featureViewList = game.availableFeatures().stream()
+                .sorted(comparing(Feature::dollarValue))
+                .map(FeatureView::from)
+                .collect(Collectors.toList());
+        model.addAttribute("availableFeatures", featureViewList);
         return "game-board";
     }
 }

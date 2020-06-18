@@ -7,7 +7,7 @@ import java.util.Set;
 public class Game {
 
     private Set<Feature> availableFeatures = ImmutableSet.<Feature>builder()
-            .add(new Feature("P5", "1$ Feature", "This feature is easy to build"))
+            .add(new Feature("P5", "1$ Feature", "This feature is easy to build", 1))
             .build();
 
     public int score() {

@@ -6,5 +6,26 @@
 </head>
 <body>
 Score: <span th:text="${score}">42</span>
+
+<h2>Available Features</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="feature: ${availableFeatures}">
+        <td th:text="${feature.id}">P5</td>
+        <td th:text="${feature.name}">$1 Feature</td>
+        <td th:text="${feature.description}">This feature is easy to build</td>
+        <td th:text="${feature.dollarValue}">$1</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

@@ -10,9 +10,26 @@ public class Feature {
     private int maintenanceEffort; // 1
     private int dollarValue; // 1
 
-    public Feature(String id, String name, String description) {
+    public Feature(String id, String name, String description, int dollarValue) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.dollarValue = dollarValue;
+    }
+
+    public String id() {
+        return id;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public String description() {
+        return description;
+    }
+
+    public int dollarValue() {
+        return dollarValue;
     }
 }
