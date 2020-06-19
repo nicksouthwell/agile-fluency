@@ -23,6 +23,7 @@ public class GameController {
     @GetMapping("/")
     public String viewScore(Model model) {
         model.addAttribute("score", game.score());
+        model.addAttribute("round", 0);
         List<FeatureView> featureViewList = game.availableFeatures().stream()
                 .sorted(comparing(Feature::dollarValue))
                 .map(FeatureView::from)

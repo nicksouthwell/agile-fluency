@@ -8,11 +8,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class FeatureViewTransformationTest {
     @Test
     public void featureShouldBeTransformedToView() {
-        Feature feature = new Feature("ABC", "Bob", "Hello", 42);
+        Feature feature = new Feature("ABC", "Hello", 42);
 
         FeatureView view = FeatureView.from(feature);
 
         assertThat(view)
-                .isEqualTo(new FeatureView("ABC", "Bob", "Hello", "$42"));
+                .isEqualTo(new FeatureView("ABC", "$42 Feature", "Hello"));
     }
 }

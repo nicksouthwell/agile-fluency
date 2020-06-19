@@ -10,10 +10,9 @@ public class FeatureView {
     private final String id;          // P5
     private final String name;        // $1 Feature
     private final String description; // This feature is easy to build
-    private final String dollarValue;
 
     public static FeatureView from(Feature feature) {
-        String dollarValue = "$" + feature.dollarValue();
-        return new FeatureView(feature.id(), feature.name(), feature.description(), dollarValue);
+        String name = String.format("$%d Feature", feature.dollarValue());
+        return new FeatureView(feature.id(), name, feature.description());
     }
 }
