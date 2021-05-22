@@ -4,6 +4,8 @@ import com.nick.af.project.application.port.in.NewProjectResponse;
 import com.nick.af.project.application.port.in.NewProjectUseCase;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProjectServiceTest {
@@ -11,22 +13,23 @@ public class ProjectServiceTest {
 
     @Test
     public void newGame_hasAnId() {
-        NewProjectResponse newProjectResponse = newProjectUseCase.newGame();
+        NewProjectResponse newProjectResponse = newProjectUseCase.newProject();
 
-        assertThat(newProjectResponse.getProjectId()).isNotNull();
+        assertThat(newProjectResponse.projectId()).isNotNull();
     }
 
     @Test
     public void newGame_hasFeatureCardNames() {
-        NewProjectResponse newProjectResponse = newProjectUseCase.newGame();
+        NewProjectResponse project = newProjectUseCase.newProject();
 
-        assertThat(newProjectResponse.getFeatureCardNames()).isNotEmpty();
+        Collection<String> featureCardNames = project.featureCardNames();
+        assertThat(featureCardNames).isNotEmpty();
     }
 
     @Test
     public void newGame_hasPracticeCardNames() {
-        NewProjectResponse newProjectResponse = newProjectUseCase.newGame();
+        NewProjectResponse newProjectResponse = newProjectUseCase.newProject();
 
-        assertThat(newProjectResponse.getPracticeCardNames()).isNotEmpty();
+        assertThat(newProjectResponse.practiceCardNames()).isNotEmpty();
     }
 }
