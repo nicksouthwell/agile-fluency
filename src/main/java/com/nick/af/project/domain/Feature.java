@@ -1,10 +1,13 @@
 package com.nick.af.project.domain;
 
+import lombok.Value;
+
+@Value
 public class Feature {
-    private final String id;            // P5
-    private final String description;   // This feature is easy to build
-    private final int dollarValue;      // 1
-    private Requirements requirements;
+    String id;            // P5
+    String description;   // This feature is easy to build
+    int dollarValue;      // 1
+    Requirements requirements;
 
     public Feature(String id, String description, int dollarValue) {
         this.id = id;
