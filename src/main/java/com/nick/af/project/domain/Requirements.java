@@ -1,4 +1,4 @@
-package com.nick.af.game.domain;
+package com.nick.af.project.domain;
 
 public class Requirements {
     private Effort programmerEffort;

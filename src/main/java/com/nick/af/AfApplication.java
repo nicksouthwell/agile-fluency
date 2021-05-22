@@ -1,6 +1,6 @@
 package com.nick.af;
 
-import com.nick.af.game.domain.Game;
+import com.nick.af.project.domain.Project;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ public class AfApplication {
     }
 
     @Bean
-    Game theGame() {
-        return new Game();
+    Project theGame() {
+        return new Project();
     }
 }

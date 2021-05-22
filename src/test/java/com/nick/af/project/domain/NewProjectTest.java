@@ -1,20 +1,20 @@
-package com.nick.af.game.domain;
+package com.nick.af.project.domain;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class NewGameTest {
-    private Game game = new Game();
+class NewProjectTest {
+    private Project project = new Project();
 
     @Test
     public void aNewGameHasAScoreOfZero() {
-        assertThat(game.score())
+        assertThat(project.score())
                 .isZero();
     }
 
     @Test
     public void aNewGameHasAvailableFeatures() {
-        assertThat(game.availableFeatures()).isNotEmpty();
+        assertThat(project.availableFeatures()).isNotEmpty();
     }
 }

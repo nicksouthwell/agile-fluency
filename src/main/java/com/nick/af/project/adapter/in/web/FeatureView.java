@@ -1,6 +1,6 @@
-package com.nick.af.game.adapter.in.web;
+package com.nick.af.project.adapter.in.web;
 
-import com.nick.af.game.domain.Feature;
+import com.nick.af.project.domain.Feature;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

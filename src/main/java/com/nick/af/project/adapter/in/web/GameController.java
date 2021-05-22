@@ -1,7 +1,7 @@
-package com.nick.af.game.adapter.in.web;
+package com.nick.af.project.adapter.in.web;
 
-import com.nick.af.game.domain.Feature;
-import com.nick.af.game.domain.Game;
+import com.nick.af.project.domain.Feature;
+import com.nick.af.project.domain.Project;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,17 +14,17 @@ import static java.util.Comparator.comparing;
 @Controller
 public class GameController {
 
-    private final Game game;
+    private final Project project;
 
-    public GameController(Game game) {
-        this.game = game;
+    public GameController(Project project) {
+        this.project = project;
     }
 
     @GetMapping("/")
     public String viewScore(Model model) {
-        model.addAttribute("score", game.score());
+        model.addAttribute("score", project.score());
         model.addAttribute("round", 0);
-        List<FeatureView> featureViewList = game.availableFeatures().stream()
+        List<FeatureView> featureViewList = project.availableFeatures().stream()
                 .sorted(comparing(Feature::dollarValue))
                 .map(FeatureView::from)
                 .collect(Collectors.toList());

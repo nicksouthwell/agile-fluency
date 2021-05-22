@@ -1,15 +1,15 @@
-package com.nick.af.game.domain;
+package com.nick.af.project.domain;
 
 import com.google.common.collect.ImmutableSet;
 import lombok.Value;
 
 import java.util.Set;
 
-public class Game {
+public class Project {
 
-    // ctor: load feature & practice cards
-    // provide lists of visible cards
-    // allow inspection of visible cards
+    // ctor: initialized with feature & practice cards
+    // provides lists of visible cards
+    // allows inspection of visible cards
     // create a new project
     // (list/restore saved projects)
 

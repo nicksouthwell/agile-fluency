@@ -1,4 +1,4 @@
-package com.nick.af.game.domain;
+package com.nick.af.project.domain;
 
 public class Feature {
     private final String id;            // P5
