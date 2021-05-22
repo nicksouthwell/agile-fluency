@@ -1,6 +1,6 @@
 package com.nick.af;
 
-import com.nick.af.domain.Game;
+import com.nick.af.game.domain.Game;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

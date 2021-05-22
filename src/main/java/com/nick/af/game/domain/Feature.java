@@ -1,18 +1,16 @@
-package com.nick.af.domain;
+package com.nick.af.game.domain;
 
 public class Feature {
-    private final String id;          // P5
-    private final String description; // This feature is easy to build
-    private int requiredProgrammerEffort;   // 3, -1 If pairing, +1 if Done Done
-    private int requiredTesterEffort;    // 2
-    private int requiredManagerEffort;  // 1
-    private int maintenanceEffort; // 1
-    private int dollarValue; // 1
+    private final String id;            // P5
+    private final String description;   // This feature is easy to build
+    private final int dollarValue;      // 1
+    private Requirements requirements;
 
     public Feature(String id, String description, int dollarValue) {
         this.id = id;
         this.description = description;
         this.dollarValue = dollarValue;
+        this.requirements = new Requirements();
     }
 
     public String id() {

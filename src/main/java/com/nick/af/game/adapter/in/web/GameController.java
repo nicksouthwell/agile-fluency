@@ -1,7 +1,7 @@
-package com.nick.af.adapter.web;
+package com.nick.af.game.adapter.in.web;
 
-import com.nick.af.domain.Feature;
-import com.nick.af.domain.Game;
+import com.nick.af.game.domain.Feature;
+import com.nick.af.game.domain.Game;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

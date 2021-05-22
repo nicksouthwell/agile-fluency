@@ -1,4 +1,4 @@
-package com.nick.af.domain;
+package com.nick.af.game.domain;
 
 import org.junit.jupiter.api.Test;
 
