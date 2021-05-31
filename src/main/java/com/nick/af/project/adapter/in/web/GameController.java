@@ -1,34 +1,29 @@
 package com.nick.af.project.adapter.in.web;
 
-import com.nick.af.project.domain.Feature;
-import com.nick.af.project.domain.Project;
+import com.nick.af.project.application.port.in.NewProjectResponse;
+import com.nick.af.project.application.port.in.NewProjectUseCase;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.Comparator.comparing;
-
 @Controller
 public class GameController {
 
-    private final Project project;
+    private final NewProjectResponse newProjectResponse;
 
-    public GameController(Project project) {
-        this.project = project;
+    public GameController(NewProjectUseCase projectCreator) {
+        this.newProjectResponse = projectCreator.newProject();
     }
 
     @GetMapping("/")
     public String viewScore(Model model) {
-        model.addAttribute("score", project.score());
+        model.addAttribute("score", 0);
         model.addAttribute("round", 0);
-        List<FeatureView> featureViewList = project.availableFeatures().stream()
-                .sorted(comparing(Feature::dollarValue))
-                .map(FeatureView::from)
-                .collect(Collectors.toList());
-        model.addAttribute("availableFeatures", featureViewList);
+//        List<FeatureView> featureViewList = project.availableFeatures().stream()
+//                .sorted(comparing(Feature::dollarValue))
+//                .map(FeatureView::from)
+//                .collect(Collectors.toList());
+//        model.addAttribute("availableFeatures", featureViewList);
         return "game-board";
     }
 }

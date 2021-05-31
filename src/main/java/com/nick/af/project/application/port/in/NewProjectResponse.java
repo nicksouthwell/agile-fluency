@@ -5,11 +5,12 @@ import lombok.Value;
 import lombok.experimental.Accessors;
 
 import java.util.Collection;
+import java.util.Map;
 
 @Value
 @Accessors(fluent = true)
 public class NewProjectResponse {
     Project.Id projectId;
-    Collection<String> featureCardNames;
+    Map<String,String> featureCardNames;
     Collection<String> practiceCardNames;
 }

@@ -7,7 +7,6 @@ plugins {
 
 group = 'com.nick'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -30,6 +29,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation 'org.mockito:mockito-junit-jupiter:2.23.0'
 }
 
 itestSourceSet {

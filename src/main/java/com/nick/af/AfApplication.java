@@ -1,6 +1,7 @@
 package com.nick.af;
 
-import com.nick.af.project.domain.Project;
+import com.nick.af.project.adapter.out.persistence.CardLoaderAdapter;
+import com.nick.af.project.application.ProjectService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,13 @@ public class AfApplication {
     }
 
     @Bean
-    Project theGame() {
-        return new Project();
+    CardLoaderAdapter cardLoader() {
+        return new CardLoaderAdapter();
+    }
+
+    @Bean
+    ProjectService theGame() {
+        CardLoaderAdapter cardLoader = cardLoader();
+        return new ProjectService(cardLoader, cardLoader);
     }
 }
